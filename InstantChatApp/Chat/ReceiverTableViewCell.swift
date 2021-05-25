@@ -9,6 +9,9 @@ import UIKit
 
 class ReceiverTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var ReceiverView: UIView!
+    @IBOutlet weak var ReceTime: UILabel!
+    @IBOutlet weak var ReceiverText: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

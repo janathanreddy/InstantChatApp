@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import Firebase
 
 class ChatPersonTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var ImageViews: UIImageView!
+    @IBOutlet weak var NameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,5 +23,6 @@ class ChatPersonTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    
 }

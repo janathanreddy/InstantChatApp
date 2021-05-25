@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class ViewController: UIViewController,UITextFieldDelegate {
 
@@ -19,7 +21,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var AgeText: UITextField!
     @IBOutlet weak var NameText: UITextField!
     var validation = Validation()
-
+    let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
         HideKeyboard()
@@ -75,10 +77,9 @@ class ViewController: UIViewController,UITextFieldDelegate {
 
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
         if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
             var point = SignUpView.frame.origin
-            point.y = 8
+            point.y = 19
             point.x = 0
             scrolView.setContentOffset(point, animated: true)
             nextField.becomeFirstResponder()
@@ -117,7 +118,6 @@ class ViewController: UIViewController,UITextFieldDelegate {
             self.present(alertController, animated: true, completion: nil)
             
         }
-        
         else if mobileno.count < 10 || mobileno.count > 10{
           print("Enter Your 10 Digits Mobile Number")
             
@@ -128,7 +128,6 @@ class ViewController: UIViewController,UITextFieldDelegate {
             self.present(alertController, animated: true, completion: nil)
 
         }
-
         else if validation.validatePassword(password: password)==false{
             let alertController = UIAlertController(title: "Alert", message:
                 "Please Make Sure Your Password is at least 8 Characters, Contains a Special Character and a Number", preferredStyle: .alert)
@@ -139,10 +138,29 @@ class ViewController: UIViewController,UITextFieldDelegate {
             print("Please Make Sure Your Password is at least 8 Characters, Contains a Special Character and a Number")
         }
         else{
-            performSegue(withIdentifier: "SignUPToLogin", sender: self)
+            Auth.auth().createUser(withEmail: EmailId, password: password) { (result, err) in
+                
+                if err != nil {
+                    let alertController = UIAlertController(title: "Alert", message:
+                        "\(err)", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                else {
+                    let db = Firestore.firestore()
+                    db.collection("users").addDocument(data: ["name":Name, "age":Age, "uid": result!.user.uid,"department":Department,"mobileno":mobileno,"email":EmailId]) { (error) in
+                        if error != nil {
+                            let alertController = UIAlertController(title: "Alert", message:
+                                "\(err)", preferredStyle: .alert)
+                            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                    }
+                    self.performSegue(withIdentifier: "SignUPToLogin", sender: self)
+                }
+            }
         }
-print("tapped")
-        
     }
     
 }
