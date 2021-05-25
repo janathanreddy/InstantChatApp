@@ -432,7 +432,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3DG-h5-cYL">
-                                <rect key="frame" x="0.0" y="122" width="414" height="690"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="698"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sendercell" rowHeight="69" id="XEL-lx-Llu" customClass="SenderTableViewCell" customModule="InstantChatApp" customModuleProvider="target">
@@ -599,7 +599,7 @@
                             <constraint firstItem="AhO-jt-Gqm" firstAttribute="leading" secondItem="J40-qw-eZ2" secondAttribute="leading" id="PKw-vR-1Nk"/>
                             <constraint firstItem="AhO-jt-Gqm" firstAttribute="top" secondItem="J40-qw-eZ2" secondAttribute="top" id="VBA-lG-XS3"/>
                             <constraint firstItem="o6T-qy-lxc" firstAttribute="trailing" secondItem="J40-qw-eZ2" secondAttribute="trailing" id="Zz8-Xl-frs"/>
-                            <constraint firstItem="3DG-h5-cYL" firstAttribute="top" secondItem="AhO-jt-Gqm" secondAttribute="bottom" constant="8" symbolic="YES" id="bE1-kq-9z2"/>
+                            <constraint firstItem="3DG-h5-cYL" firstAttribute="top" secondItem="AhO-jt-Gqm" secondAttribute="bottom" id="bE1-kq-9z2"/>
                             <constraint firstItem="AhO-jt-Gqm" firstAttribute="centerX" secondItem="7JT-5T-zEM" secondAttribute="centerX" id="gm7-oS-iDw"/>
                             <constraint firstItem="o6T-qy-lxc" firstAttribute="leading" secondItem="J40-qw-eZ2" secondAttribute="leading" id="hGg-cM-Uda"/>
                             <constraint firstItem="o6T-qy-lxc" firstAttribute="top" secondItem="3DG-h5-cYL" secondAttribute="bottom" id="uhs-Ae-Aqc"/>
