@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 class LoginViewController: UIViewController,UITextFieldDelegate {
-
+    var window: UIWindow?
     @IBOutlet weak var LoginView: UIView!
     @IBOutlet weak var scrolView: UIScrollView!
     @IBOutlet weak var LoginButton: UIButton!

@@ -180,7 +180,7 @@
         <!--Login View Controller-->
         <scene sceneID="yDo-Kc-n2h">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="mMB-Ku-1yS" customClass="LoginViewController" customModule="InstantChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="mMB-Ku-1yS" customClass="LoginViewController" customModule="InstantChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WWd-wW-I1l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -499,23 +499,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AhO-jt-Gqm">
                                 <rect key="frame" x="0.0" y="44" width="414" height="70"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="33" translatesAutoresizingMaskIntoConstraints="NO" id="wdj-MU-sUc">
-                                        <rect key="frame" x="8" y="10" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="V5z-GV-p41"/>
-                                            <constraint firstAttribute="height" constant="50" id="hA7-lV-Hlz"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kq0-4d-BRO">
-                                        <rect key="frame" x="66" y="20" width="212" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="212" id="1TD-Zi-y1J"/>
-                                            <constraint firstAttribute="height" constant="30" id="PX9-Ek-wl0"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kx-dP-dJY">
                                         <rect key="frame" x="376" y="20" width="30" height="30"/>
                                         <constraints>
@@ -524,6 +507,34 @@
                                         </constraints>
                                         <state key="normal" image="teletype" catalog="system"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5b-dM-Fgv">
+                                        <rect key="frame" x="8" y="10" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="DIc-Wl-JWd"/>
+                                            <constraint firstAttribute="height" constant="50" id="fiK-NO-oNc"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="arrowshape.turn.up.backward" catalog="system"/>
+                                        <connections>
+                                            <action selector="bacact:" destination="XhN-XB-Rwm" eventType="touchUpInside" id="D3h-yY-PpE"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="33" translatesAutoresizingMaskIntoConstraints="NO" id="wdj-MU-sUc">
+                                        <rect key="frame" x="64" y="10" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="V5z-GV-p41"/>
+                                            <constraint firstAttribute="height" constant="50" id="hA7-lV-Hlz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kq0-4d-BRO">
+                                        <rect key="frame" x="122" y="20" width="212" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="212" id="1TD-Zi-y1J"/>
+                                            <constraint firstAttribute="height" constant="30" id="PX9-Ek-wl0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -538,7 +549,9 @@
                                     <constraint firstAttribute="bottom" secondItem="wdj-MU-sUc" secondAttribute="bottom" constant="10" id="gJ8-tb-HZU"/>
                                     <constraint firstAttribute="width" constant="414" id="jKt-0x-qaE"/>
                                     <constraint firstAttribute="height" constant="70" id="mWU-Fr-7K1"/>
-                                    <constraint firstItem="wdj-MU-sUc" firstAttribute="leading" secondItem="AhO-jt-Gqm" secondAttribute="leading" constant="8" id="t8Y-q5-eoz"/>
+                                    <constraint firstItem="wdj-MU-sUc" firstAttribute="leading" secondItem="W5b-dM-Fgv" secondAttribute="trailing" constant="6" id="tyW-mp-WMk"/>
+                                    <constraint firstItem="wdj-MU-sUc" firstAttribute="centerY" secondItem="W5b-dM-Fgv" secondAttribute="centerY" id="vPa-8f-RyH"/>
+                                    <constraint firstItem="W5b-dM-Fgv" firstAttribute="leading" secondItem="AhO-jt-Gqm" secondAttribute="leading" constant="8" id="y8m-R1-Msy"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6T-qy-lxc">
@@ -624,6 +637,7 @@
     <resources>
         <image name="33" width="400" height="400"/>
         <image name="35" width="300" height="300"/>
+        <image name="arrowshape.turn.up.backward" catalog="system" width="128" height="106"/>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
         <image name="logo" width="182" height="45"/>
         <image name="mic.circle.fill" catalog="system" width="128" height="121"/>

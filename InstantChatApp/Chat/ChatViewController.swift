@@ -184,6 +184,11 @@ class ChatViewController: UIViewController,UITableViewDelegate, UITableViewDataS
               }
         }
     }
+    
+    @IBAction func bacact(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 struct messagedata {

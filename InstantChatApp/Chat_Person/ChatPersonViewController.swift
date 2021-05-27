@@ -50,6 +50,13 @@ class ChatPersonViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func Logout(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            dismiss(animated: true, completion: nil)
+            } catch let err {
+                print(err)
+        }
+        
     }
     func chat_persons(){
         self.db.collection("users").addSnapshotListener{ [self] (snapshot, err) in
